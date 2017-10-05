@@ -1,0 +1,36 @@
+int checkSequence(int*a,int start,int end,int OE)
+ {                                                   //start is starting index of array pointer *a and end is ending index
+    int j=1;
+    
+    for(int i=start;i<=end;i++)
+    {
+        if(i==end && a[i]==j && (j==6 || j==7) && OE)  
+        {   
+            return 1;
+        }
+        else if(i==end && a[i]==j && j!=7 && !(OE))
+        {
+            return 0;
+        }
+        
+        if(a[i]==j)continue;
+        else
+        {
+            j=j+1;
+            if(j==8)return 0;
+            
+            if(a[i]==j)
+              continue;
+            else
+            {// cout<<"im from after j increment"<<endl;
+               return 0;
+        }   }
+    }
+    return 1;
+}
+
+/* this codes check if the array is sequentially increasing  or not with repeatation .
+  up to j number 
+ if array contains N element the you have to pass the the value of OE=1 if N is odd
+ and OE=0 if N is even
+ */
